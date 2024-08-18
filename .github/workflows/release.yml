@@ -1,0 +1,52 @@
+name: Build and Tag
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "latest"
+
+      - name: Install dependencies
+        run: bun install --production
+
+      - name: Run tests
+        run: bun test
+
+      - name: Build executables
+        run: |
+          bun build-hkid
+          bun build-sgid
+
+      - name: Commit changes
+        run: |
+          git config --local user.name "Cedric0303"
+          git config --local user.email "chenjunli7@gmail.com"
+          git add .
+          git commit -m "Automated build output"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create a Tag
+        run: |
+          # Create a new tag
+          VERSION=$(node -p "require('./package.json').version")
+          git tag -a "v$VERSION" -m "Release $VERSION"
+          git push origin "v$VERSION"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

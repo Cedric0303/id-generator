@@ -1,0 +1,29 @@
+{
+  "name": "homebrew-tap",
+  "version": "1.2.1",
+  "author": "Cedric0303",
+  "module": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build-hkid-macos-arm64": "bun build ./src/hkid/index.js --target=bun-darwin-arm64 --compile --minify --sourcemap --outfile ./dist/hkid-macos-arm64",
+    "build-hkid-macos-x64": "bun build ./src/hkid/index.js --target=bun-darwin-x64 --compile --minify --sourcemap --outfile ./dist/hkid-macos-x64",
+    "build-hkid-linux-x64": "bun build ./src/hkid/index.js --target=bun-linux-x64 --compile --minify --sourcemap --outfile ./dist/hkid-linux-x64",
+    "build-hkid": "bun build-hkid-macos-arm64 && bun build-hkid-macos-x64 && bun build-hkid-linux-x64",
+    "build-sgid-macos-arm64": "bun build ./src/sgid/index.js --target=bun-darwin-arm64 --compile --minify --sourcemap --outfile ./dist/sgid-macos-arm64",
+    "build-sgid-macos-x64": "bun build ./src/sgid/index.js --target=bun-darwin-x64 --compile --minify --sourcemap --outfile ./dist/sgid-macos-x64",
+    "build-sgid-linux-x64": "bun build ./src/sgid/index.js --target=bun-linux-x64 --compile --minify --sourcemap --outfile ./dist/sgid-linux-x64",
+    "build-sgid": "bun build-sgid-macos-arm64 && bun build-sgid-macos-x64 && bun build-sgid-linux-x64"
+  },
+  "dependencies": {
+    "copy-paste": "^1.5.3"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.9.0",
+    "@types/bun": "^1.1.6",
+    "eslint": "<9.0.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "globals": "^15.9.0"
+  }
+}
