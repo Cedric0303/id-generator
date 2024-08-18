@@ -1,21 +1,25 @@
-# cedric0303/homebrew-tap
+# cedric0303/id-generator
 
 ## Installation
 
 ```bash
-brew install cedric0303/tap/hkid
+bun install
+```
 
-brew install cedric0303/tap/sgid
+## Test
+
+```bash
+brew test
 ```
 
 ## Usage
 
 ```bash
-> hkid
+bun ./src/hkid/index.js
 A5758052
 
-> sgid
+bun ./src/sgid/index.js
 S8541816E
-
+****
 // output automatically copied to clipboard
 ```
