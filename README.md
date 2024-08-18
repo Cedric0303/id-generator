@@ -20,6 +20,6 @@ A5758052
 
 bun ./src/sgid/index.js
 S8541816E
-****
+
 // output automatically copied to clipboard
 ```
