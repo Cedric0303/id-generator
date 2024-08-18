@@ -3,22 +3,23 @@
 ## Installation
 
 ```bash
-bun install
-```
+# npm
+npm install --global @cedric0303/id-generator
 
-## Test
+# yarn
+yarn global add @cedric0303/id-generator
 
-```bash
-brew test
+# bun
+bun add --global @cedric0303/id-generator
 ```
 
 ## Usage
 
 ```bash
-bun ./src/hkid/index.js
+> sgid
 A5758052
 
-bun ./src/sgid/index.js
+> hkid
 S8541816E
 
 // output automatically copied to clipboard
