@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { randomInt } from 'crypto';
 import { copy } from 'copy-paste';
 
