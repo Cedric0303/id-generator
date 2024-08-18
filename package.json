@@ -1,8 +1,7 @@
 {
-  "name": "homebrew-tap",
+  "name": "@cedric0303/id-generator",
   "version": "1.0.0",
-  "author": "Cedric0303",
-  "module": "src/index.js",
+  "author": "Jun Li Chen <chenjunli7@gmail.com> (https://cedriccjl.dev)",
   "license": "MIT",
   "scripts": {
     "build-hkid-macos-arm64": "bun build ./src/hkid/index.js --target=bun-darwin-arm64 --compile --minify --sourcemap --outfile ./dist/hkid-macos-arm64",
@@ -25,5 +24,24 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2",
     "globals": "^15.9.0"
-  }
+  },
+  "bin": {
+    "sgid": "src/sgid/index.js",
+    "hkid": "src/hkid/index.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cedric0303/id-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cedric0303/id-generator/issues"
+  },
+  "homepage": "https://github.com/Cedric0303/id-generator#readme",
+  "description": "```bash\r bun install\r ```",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "type": "module"
 }
