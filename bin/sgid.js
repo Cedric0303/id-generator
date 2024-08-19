@@ -2,4 +2,4 @@
 
 import { randomSGID } from '../src/index.js';
 
-randomSGID();
+console.log(randomSGID());

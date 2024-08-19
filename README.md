@@ -24,3 +24,7 @@ S8541816E
 
 // output automatically copied to clipboard
 ```
+
+## Acknowledgement
+
+This project includes code from [icelam/hkid-generator](https://github.com/icelam/hkid-generator) and [samliew/singapore-nric](https://github.com/samliew/singapore-nric).

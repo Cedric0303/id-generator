@@ -61,8 +61,6 @@ const randomSGID = () => {
 
   const checksum = calculateChecksum(randomFirstChar, digits);
 
-  console.log(`${randomFirstChar}${digits}${checksum}`);
-
   return copy(`${randomFirstChar}${digits}${checksum}`);
 };
 

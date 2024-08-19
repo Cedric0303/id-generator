@@ -55,8 +55,6 @@ const randomHKID = () => {
   // Calculate check digit
   const checkdigit = calculateCheckDigit(randomAlphabet, randomNumber);
 
-  console.log(`${randomAlphabet}${randomNumber}${checkdigit}`);
-
   return copy(`${randomAlphabet}${randomNumber}${checkdigit}`);
 };
 

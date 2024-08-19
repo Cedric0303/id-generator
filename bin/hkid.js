@@ -2,4 +2,4 @@
 
 import { randomHKID } from '../src/index.js';
 
-randomHKID();
+console.log(randomHKID());
