@@ -1,18 +1,8 @@
 {
   "name": "@cedric0303/id-generator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Jun Li Chen <chenjunli7@gmail.com> (https://cedriccjl.dev)",
   "license": "MIT",
-  "scripts": {
-    "build-hkid-macos-arm64": "bun build ./src/hkid/index.js --target=bun-darwin-arm64 --compile --minify --sourcemap --outfile ./dist/hkid-macos-arm64",
-    "build-hkid-macos-x64": "bun build ./src/hkid/index.js --target=bun-darwin-x64 --compile --minify --sourcemap --outfile ./dist/hkid-macos-x64",
-    "build-hkid-linux-x64": "bun build ./src/hkid/index.js --target=bun-linux-x64 --compile --minify --sourcemap --outfile ./dist/hkid-linux-x64",
-    "build-hkid": "bun build-hkid-macos-arm64 && bun build-hkid-macos-x64 && bun build-hkid-linux-x64",
-    "build-sgid-macos-arm64": "bun build ./src/sgid/index.js --target=bun-darwin-arm64 --compile --minify --sourcemap --outfile ./dist/sgid-macos-arm64",
-    "build-sgid-macos-x64": "bun build ./src/sgid/index.js --target=bun-darwin-x64 --compile --minify --sourcemap --outfile ./dist/sgid-macos-x64",
-    "build-sgid-linux-x64": "bun build ./src/sgid/index.js --target=bun-linux-x64 --compile --minify --sourcemap --outfile ./dist/sgid-linux-x64",
-    "build-sgid": "bun build-sgid-macos-arm64 && bun build-sgid-macos-x64 && bun build-sgid-linux-x64"
-  },
   "dependencies": {
     "copy-paste": "^1.5.3"
   },
@@ -26,8 +16,8 @@
     "globals": "^15.9.0"
   },
   "bin": {
-    "sgid": "src/sgid/index.js",
-    "hkid": "src/hkid/index.js"
+    "sgid": "bin/sgid.js",
+    "hkid": "bin/hkid.js"
   },
   "directories": {
     "test": "test"
@@ -40,7 +30,7 @@
     "url": "https://github.com/Cedric0303/id-generator/issues"
   },
   "homepage": "https://github.com/Cedric0303/id-generator#readme",
-  "description": "```bash\r bun install\r ```",
+  "description": "ID generators for SG and HK",
   "main": "./src/index.js",
   "module": "./src/index.js",
   "type": "module"

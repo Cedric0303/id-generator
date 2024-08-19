@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import { randomInt } from 'crypto';
 import { copy } from 'copy-paste';
 
@@ -69,5 +67,3 @@ const randomSGID = () => {
 };
 
 export default randomSGID;
-
-if (process.env.NODE_ENV !== 'test') randomSGID();
