@@ -27,4 +27,7 @@ S8541816E
 
 ## Acknowledgement
 
-This project includes code from [icelam/hkid-generator](https://github.com/icelam/hkid-generator) and [samliew/singapore-nric](https://github.com/samliew/singapore-nric).
+This project incorporates code from the following projects:
+
+- [hkid-generator](https://github.com/icelam/hkid-generator) by [[icelam](https://github.com/icelam)] (License: ISC)
+- [singapore-nric](https://github.com/samliew/singapore-nric) by [[samliew](https://github.com/]samliew) (License: MIT)
