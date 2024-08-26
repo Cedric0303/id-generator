@@ -1,7 +1,2 @@
-import randomHKID from './hkid/index.js';
-import randomSGID from './sgid/index.js';
-
-export {
-  randomHKID,
-  randomSGID,
-};
+export { default as randomSGID } from './sgid/index.js';
+export { default as randomHKID } from './hkid/index.js';

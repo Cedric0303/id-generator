@@ -40,14 +40,14 @@ const calculateCheckDigit = (charPart, numPart) => {
 
 /**
  * Generate random HKID
- * @returns  {string}
+ * @returns  {Promise<string>}
  */
-const randomHKID = () => {
+export default async function randomHKID() {
   // Generate a random number between 1 - 10
   const hkidMode = randomInt(1, 11);
 
   // Generate A - Z from ASCII code 65 - 90
-  const randomAlphabet = (hkidMode === 10) ? String.fromCharCode(randomInt(65, 90)) + String.fromCharCode(randomInt(65, 90)) : String.fromCharCode(randomInt(65, 90));
+  const randomAlphabet = (hkidMode === 10) ? String.fromCharCode(randomInt(65, 91)) + String.fromCharCode(randomInt(65, 91)) : String.fromCharCode(randomInt(65, 91));
 
   // Generate 6 Number
   const randomNumber = Array.from({ length: 6 }, () => randomInt(0, 10)).join('');
@@ -56,6 +56,4 @@ const randomHKID = () => {
   const checkdigit = calculateCheckDigit(randomAlphabet, randomNumber);
 
   return copy(`${randomAlphabet}${randomNumber}${checkdigit}`);
-};
-
-export default randomHKID;
+}

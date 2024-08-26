@@ -51,17 +51,15 @@ const calculateChecksum = (firstChar, digitStr) => {
 
 /**
  * Generate random SGID
- * @returns  {string}
+ * @returns  {Promise<string>}
  */
-const randomSGID = () => {
+export default async function randomSGID() {
   const firstChars = ['S', 'T', 'F', 'G', 'M'];
-  const randomFirstChar = firstChars[randomInt(0, firstChars.length - 1)];
+  const randomFirstChar = firstChars[randomInt(0, firstChars.length)];
 
-  const digits = Array.from({ length: 7 }, () => randomInt(1, 10)).join('');
+  const digits = Array.from({ length: 7 }, () => randomInt(0, 10)).join('');
 
   const checksum = calculateChecksum(randomFirstChar, digits);
 
   return copy(`${randomFirstChar}${digits}${checksum}`);
-};
-
-export default randomSGID;
+}

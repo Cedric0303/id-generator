@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { randomSGID } from '../src/index.js';
+import { randomHKID } from '../src/index.js';
 
-console.log(randomSGID());
+console.log(await randomHKID());
