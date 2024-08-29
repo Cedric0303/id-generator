@@ -2,4 +2,5 @@
 
 import { randomSGID } from '../src/index.js';
 
-console.log(await randomSGID());
+const input = process.argv.at(2);
+console.log(await randomSGID(input));
