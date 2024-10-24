@@ -28,6 +28,6 @@ jobs:
       - name: Run tests
         run: bun test
 
-      - run: npm publish --provenance --access public
+      - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
