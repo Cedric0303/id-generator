@@ -2,20 +2,29 @@
 
 ## Installation
 
-```bash
-# npm
+Install globally to use `sgid` or `hkid`:
+
+```sh
 npm install --global @cedric0303/id-generator
 
-# yarn
 yarn global add @cedric0303/id-generator
 
-# bun
 bun add --global @cedric0303/id-generator
 ```
 
-## Usage
+Install locally to use in projects:
 
-```bash
+```sh
+npm install @cedric0303/id-generator
+
+yarn add @cedric0303/id-generator
+
+bun add @cedric0303/id-generator
+```
+
+## Global Usage
+
+```sh
 > sgid
 A5758052
 
@@ -23,6 +32,25 @@ A5758052
 S8541816E
 
 // output automatically copied to clipboard
+```
+
+## Module/Programmatic Usage
+
+npm-check-updates can be imported as a module:
+
+```js
+import {
+  randomHKID,
+  randomSGID,
+  isValidHKID,
+  isValidSGID
+} from "@cedric0303/id-generator";;
+
+const hkid = await randomHKID();
+const sgid = await randomSGID();
+
+console.log(hkid, isValidHKID(hkid));
+console.log(sgid, isValidSGID(sgid));
 ```
 
 ## Acknowledgement

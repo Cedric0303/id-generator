@@ -1,15 +1,18 @@
-name: Build and Publish
+name: Build, Release, Publish
 
 on:
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: macos-14
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Install environment dependencies
+        run: sudo apt-get install xclip
 
       - name: Set up environment
         uses: actions/setup-node@v3
@@ -22,11 +25,20 @@ jobs:
         with:
           bun-version: "latest"
 
-      - name: Install dependencies
+      - name: Install project dependencies
         run: bun install --production
 
       - name: Run tests
         run: bun test
+
+      - name: Create a Tag
+        run: |
+          # Create a new tag
+          VERSION=$(node -p "require('./package.json').version")
+          git tag -a "v$VERSION" -m "Release $VERSION"
+          git push origin "v$VERSION"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: npm publish --access public
         env:

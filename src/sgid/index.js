@@ -1,6 +1,10 @@
 import { randomInt } from 'crypto';
 import { copy } from 'copy-paste';
 
+/**
+ * Get the checksum table based on the first character
+ * @returns {Array<string>}
+ */
 const getChecksumTable = (firstChar) => {
   const checksums = {
     ST: ['J', 'Z', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A'],
@@ -20,7 +24,7 @@ const getChecksumTable = (firstChar) => {
  * Calculate checksum digit
  * @param {string}  charPart - Alphabet in SGID
  * @param {string}  numPart - First 7 numerber in SGID
- * @returns  {(number|string)}
+ * @returns {(number|string)}
  */
 const calculateChecksum = (firstChar, digitStr) => {
   // Multiply each of the digits by the respective weights
@@ -49,11 +53,29 @@ const calculateChecksum = (firstChar, digitStr) => {
   return table[index];
 };
 
+const isCorrectFormat = (string) => /^[STFGM]\d{7}[A-Z]$/.test(string);
+
 /**
- * Generate random SGID
- * @returns  {Promise<string>}
+ * Check if a given string is a valid HKID
+ * @param {string}  string - Input string
+ * @returns {boolean}
  */
-export default async function randomSGID(inputFirstChar = '') {
+const isValidSGID = (string) => {
+  // check format
+  if (!isCorrectFormat(string)) return false;
+
+  const firstChar = string.slice(0, 1) || null;
+  const digits = string.slice(1, -1) || null;
+  const checksum = string.slice(-1) || null;
+
+  return checksum === calculateChecksum(firstChar, digits);
+};
+
+/**
+ * Generate a random SGID
+ * @returns {Promise<string>}
+ */
+const randomSGID = async (inputFirstChar = '') => {
   const firstChars = ['S', 'T', 'F', 'G', 'M'];
   const randomFirstChar = firstChars.includes(inputFirstChar.toUpperCase()) ? inputFirstChar.toUpperCase() : firstChars[randomInt(0, firstChars.length)];
 
@@ -61,5 +83,14 @@ export default async function randomSGID(inputFirstChar = '') {
 
   const checksum = calculateChecksum(randomFirstChar, digits);
 
-  return copy(`${randomFirstChar}${digits}${checksum}`);
-}
+  let sgidStr = `${randomFirstChar}${digits}${checksum}`;
+
+  if (!isValidSGID(sgidStr)) sgidStr = randomSGID(inputFirstChar);
+
+  return copy(sgidStr);
+};
+
+export {
+  randomSGID,
+  isValidSGID,
+};

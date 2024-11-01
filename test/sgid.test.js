@@ -1,8 +1,7 @@
 import { test, expect } from 'bun:test';
-import randomSGID from '../src/sgid';
+import { randomSGID, isValidSGID } from '../src/index.js';
 
 test('should generate a single SGID', async () => {
   const sgid = await randomSGID();
-  expect(sgid.length).toEqual(9);
-  expect(/^[A-Za-z]\d{7}[A-Za-z]$/.test(sgid)).toEqual(true);
+  expect(isValidSGID(sgid)).toBeTrue();
 });
