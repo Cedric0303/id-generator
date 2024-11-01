@@ -35,6 +35,8 @@ jobs:
         run: |
           # Create a new tag
           VERSION=$(node -p "require('./package.json').version")
+          git config --local user.name "Cedric0303"
+          git config --local user.email "chenjunli7@gmail.com"
           git tag -a "v$VERSION" -m "Release $VERSION"
           git push origin "v$VERSION"
         env:
