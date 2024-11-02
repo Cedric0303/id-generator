@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 import yargs from 'yargs/yargs';
+import { hideBin } from 'yargs/helpers';
 import { randomHKID } from '../src/index.js';
 
-await yargs(process.argv.slice(2))
+await yargs(hideBin(process.argv))
   .scriptName('hkid')
   .usage('Usage: $0')
   .alias('h', 'help')
