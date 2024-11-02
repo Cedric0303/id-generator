@@ -11,14 +11,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Install environment dependencies
-        run: sudo apt-get install xclip
 
       - name: Set up environment
         uses: actions/setup-node@v3
