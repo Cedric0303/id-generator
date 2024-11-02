@@ -18,7 +18,7 @@ Install locally to use in projects:
 npm install @cedric0303/id-generator
 
 yarn add @cedric0303/id-generator
-****
+
 bun add @cedric0303/id-generator
 ```
 
