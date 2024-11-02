@@ -4,7 +4,8 @@
   "author": "Jun Li Chen <chenjunli7@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "copy-paste": "^1.5.3"
+    "copy-paste": "^1.5.3",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
