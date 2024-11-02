@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import yargs from 'yargs/yargs';
 import { randomSGID } from '../src/index.js';
 

@@ -1,7 +1,26 @@
-import { test, expect } from 'bun:test';
+/* eslint-disable no-await-in-loop */
+import { test, expect, describe } from 'bun:test';
 import { randomHKID, isValidHKID } from '../src/index.js';
 
-test('should generate a single HKID', async () => {
-  const hkid = await randomHKID();
-  expect(isValidHKID(hkid)).toBeTrue();
+describe('Test HKID validator', () => {
+  test('should return true on a valid HKID', async () => {
+    const hkid = 'F1478326';
+    expect(isValidHKID(hkid)).toBeTrue();
+  });
+  test('should return false on an invalid HKID', async () => {
+    const hkid = 'S1234121';
+    expect(isValidHKID(hkid)).toBeFalse();
+  });
+});
+
+describe('Test HKID generator', () => {
+  test('should generate a single valid HKID', async () => {
+    const hkid = await randomHKID();
+    expect(isValidHKID(hkid)).toBeTrue();
+  });
+
+  test('should generate 100 valid HKIDs', async () => {
+    const hkids = await Promise.all(Array(100).fill().map(() => randomHKID()));
+    expect(hkids.every(isValidHKID)).toBeTrue();
+  });
 });

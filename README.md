@@ -1,4 +1,4 @@
-# cedric0303/id-generator
+# @cedric0303/id-generator
 
 ## Installation
 
@@ -18,7 +18,7 @@ Install locally to use in projects:
 npm install @cedric0303/id-generator
 
 yarn add @cedric0303/id-generator
-
+****
 bun add @cedric0303/id-generator
 ```
 
@@ -34,9 +34,11 @@ S8541816E
 // output automatically copied to clipboard
 ```
 
+See `sgid --help` or `hkid --help` for more details
+
 ## Module/Programmatic Usage
 
-npm-check-updates can be imported as a module:
+`@cedric0303/id-generato`r can be imported as a module:
 
 ```js
 import {
@@ -44,7 +46,7 @@ import {
   randomSGID,
   isValidHKID,
   isValidSGID
-} from "@cedric0303/id-generator";;
+} from "@cedric0303/id-generator";
 
 const hkid = await randomHKID();
 const sgid = await randomSGID();
@@ -53,9 +55,9 @@ console.log(hkid, isValidHKID(hkid));
 console.log(sgid, isValidSGID(sgid));
 ```
 
-## Acknowledgement
+## Acknowledgements
 
 This project incorporates code from the following projects:
 
-- [hkid-generator](https://github.com/icelam/hkid-generator) by [[icelam](https://github.com/icelam)] (License: ISC)
-- [singapore-nric](https://github.com/samliew/singapore-nric) by [[samliew](https://github.com/]samliew)] (License: MIT)
+- [hkid-generator](https://github.com/icelam/hkid-generator) by [icelam](https://github.com/icelam) (License: ISC)
+- [singapore-nric](https://github.com/samliew/singapore-nric) by [samliew](https://github.com/]samliew) (License: MIT)
