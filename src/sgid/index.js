@@ -75,7 +75,7 @@ const isValidSGID = (string) => {
  * Generate a random SGID
  * @returns {Promise<string>}
  */
-const randomSGID = async (inputFirstChar = '') => {
+const randomSGID = async (inputFirstChar = '', disableCopyToClipboard = false) => {
   const firstChars = ['S', 'T', 'F', 'G', 'M'];
   const randomFirstChar = firstChars.includes(inputFirstChar.toUpperCase()) ? inputFirstChar.toUpperCase() : firstChars[randomInt(0, firstChars.length)];
 
@@ -87,7 +87,7 @@ const randomSGID = async (inputFirstChar = '') => {
 
   if (!isValidSGID(sgidStr)) sgidStr = randomSGID(inputFirstChar);
 
-  return copy(sgidStr);
+  return (disableCopyToClipboard) ? sgidStr : copy(sgidStr);
 };
 
 export {

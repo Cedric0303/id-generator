@@ -83,7 +83,7 @@ const isValidHKID = (string) => {
  * Generate random HKID
  * @returns {Promise<string>}
  */
-const randomHKID = async () => {
+const randomHKID = async (disableCopyToClipboard = false) => {
   // Generate a random number between 1 - 10
   const hkidMode = randomInt(1, 11);
 
@@ -101,7 +101,7 @@ const randomHKID = async () => {
 
   if (!isValidHKID(hkidStr)) hkidStr = await randomHKID();
 
-  return copy(hkidStr);
+  return (disableCopyToClipboard) ? hkidStr : copy(hkidStr);
 };
 
 export {
