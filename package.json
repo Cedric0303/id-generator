@@ -1,6 +1,6 @@
 {
   "name": "@cedric0303/id-generator",
-  "version": "1.2.2",
+  "version": "0.1.0",
   "author": "Jun Li Chen <chenjunli7@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -9,8 +9,8 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.13.0",
-    "@types/bun": "^1.1.12",
+    "@eslint/js": "^9.14.0",
+    "@types/bun": "^1.1.13",
     "eslint": "<9.0.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.31.0",
