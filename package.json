@@ -17,8 +17,8 @@
     "globals": "^15.11.0"
   },
   "bin": {
-    "sgid": "bin/sgid.js",
-    "hkid": "bin/hkid.js"
+    "sgid": "bin/sgid.mjs",
+    "hkid": "bin/hkid.mjs"
   },
   "directories": {
     "test": "test"
