@@ -1,6 +1,6 @@
 {
   "name": "@cedric0303/id-generator",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Jun Li Chen <chenjunli7@gmail.com>",
   "license": "MIT",
   "dependencies": {
