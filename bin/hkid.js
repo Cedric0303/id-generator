@@ -1,13 +1,15 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --no-warnings=ExperimentalWarning
 
 import yargs from 'yargs/yargs';
+import { hideBin } from 'yargs/helpers';
 import { copy } from 'copy-paste';
 
-import { hideBin } from 'yargs/helpers';
+import pkg from '../package.json' with { type: 'json' };
 import { randomHKID } from '../src/index.js';
 
 const { argv } = yargs(hideBin(process.argv))
   .scriptName('hkid')
+  .version(pkg.version)
   .usage('Usage: $0 [num]')
   .command(
     '$0 [num]',
