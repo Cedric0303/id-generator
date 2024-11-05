@@ -5,7 +5,7 @@ import { hideBin } from 'yargs/helpers';
 import { copy } from 'copy-paste';
 
 import pkg from '../package.json' with { type: 'json' };
-import { randomHKID } from '../src/index.js';
+import { randomHKID } from '../src/index.mjs';
 
 const { argv } = yargs(hideBin(process.argv))
   .scriptName('hkid')

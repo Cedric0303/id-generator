@@ -1,6 +1,6 @@
 /* eslint-disable no-await-in-loop */
-import { test, expect, describe } from 'bun:test';
-import { randomHKID, isValidHKID } from '../src/index.js';
+const { test, expect, describe } = require('bun:test');
+const { randomHKID, isValidHKID } = require('../src/index.cjs');
 
 const DISABLE_COPY = true;
 

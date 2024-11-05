@@ -5,7 +5,7 @@ import { copy } from 'copy-paste';
 import { hideBin } from 'yargs/helpers';
 
 import pkg from '../package.json' with { type: 'json' };
-import { randomSGID } from '../src/index.js';
+import { randomSGID } from '../src/index.mjs';
 
 const { argv } = yargs(hideBin(process.argv))
   .scriptName('sgid')

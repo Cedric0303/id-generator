@@ -1,5 +1,5 @@
-import { randomInt } from 'crypto';
-import { copy } from 'copy-paste';
+const { randomInt } = require('crypto');
+const { copy } = require('copy-paste');
 
 /**
  * Calculate check digit
@@ -104,7 +104,7 @@ const randomHKID = async (disableCopyToClipboard = false) => {
   return (disableCopyToClipboard) ? hkidStr : copy(hkidStr);
 };
 
-export {
+module.exports = {
   randomHKID,
   isValidHKID,
 };

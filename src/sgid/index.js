@@ -1,5 +1,5 @@
-import { randomInt } from 'crypto';
-import { copy } from 'copy-paste';
+const { randomInt } = require('crypto');
+const { copy } = require('copy-paste');
 
 /**
  * Get the checksum table based on the first character
@@ -90,7 +90,7 @@ const randomSGID = async (inputFirstChar = '', disableCopyToClipboard = false) =
   return (disableCopyToClipboard) ? sgidStr : copy(sgidStr);
 };
 
-export {
+module.exports = {
   randomSGID,
   isValidSGID,
 };

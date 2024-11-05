@@ -1,6 +1,6 @@
 /* eslint-disable no-await-in-loop */
 import { test, expect, describe } from 'bun:test';
-import { randomSGID, isValidSGID } from '../src/index.js';
+import { randomSGID, isValidSGID } from '../src/index.mjs';
 
 const DISABLE_COPY = true;
 
